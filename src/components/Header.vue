@@ -1,8 +1,8 @@
 <template>
   <header class="header bg-dark py-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
+    <div class="container-fluid">
+      <div class="row justify-content-around">
+        <div class="col-md-4">
           <a href="javascript:void(0)">
             <h5 class="text-light">
               Программный комплекс для обучения операторов управлению элекрохимическим станком
