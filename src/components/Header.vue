@@ -28,5 +28,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.header {
+  height: 80px;
+  z-index: 10;
+  position: relative;
+}
 </style>
