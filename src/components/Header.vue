@@ -2,10 +2,10 @@
   <header class="header bg-dark py-2">
     <div class="container-fluid">
       <div class="row justify-content-around">
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-center">
           <a href="javascript:void(0)">
             <h5 class="text-light">
-              Программный комплекс для обучения операторов управлению элекрохимическим станком
+              ECHM-trainer
             </h5>
           </a>
         </div>
