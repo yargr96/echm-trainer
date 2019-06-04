@@ -25,8 +25,6 @@
     </table>
     <div>
       <button class="btn btn-success" @click="showAddUserPopup">Добавить пользователя</button>
-      {{ userToChangePassword }}
-      {{ newPassword }}
     </div>
 
     <transition name="fade">

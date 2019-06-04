@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar border-right">
+  <div class="sidebar border-right bg-white">
     <div class="list-group list-group-flush">
       <a 
         href="javascript:void(0)" 
@@ -17,6 +17,7 @@ export default {
     return {
       list: [
         'Модуль администрирования учётных записей',
+        'Модуль математического моделирования'
       ]
     }
   }
@@ -36,11 +37,11 @@ export default {
 .sidebar-list__item {
   transition: all .2s;
   color: #343a40;
-}
 
-.sidebar-list__item:hover {
-  background-color: #343a40;
-  color: #ffffff !important;
-  text-decoration: none;
+  &:hover {
+    background-color: #343a40;
+    color: #ffffff !important;
+    text-decoration: none;
+  }
 }
 </style>

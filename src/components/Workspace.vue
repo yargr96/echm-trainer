@@ -4,7 +4,8 @@
     <div class="container-fluid page">
       <div class="row">
         <div class="col-12">
-          <app-admin-interface></app-admin-interface>
+          <!-- <app-admin-interface></app-admin-interface> -->
+          <app-math-module></app-math-module>
         </div>
       </div>
     </div>
@@ -14,11 +15,13 @@
 <script>
 import AppSidebar from './Sidebar'
 import AppAdminInterface from './AdminInterface'
+import AppMathModule from './MathModule'
 
 export default {
   components: {
     AppSidebar,
-    AppAdminInterface
+    AppAdminInterface,
+    AppMathModule
   }
 };
 </script>

@@ -1,11 +1,13 @@
 <?php
 require_once('./classes/users.php');
+require_once('./classes/parameters.php');
 
 $queries = [
   'get_users' => 'get_users',
   'add_user' => 'add_user',
   'delete_user' => 'delete_user',
   'change_password' => 'change_password',
+  'get_input_parameters' => 'get_input_parameters',
 ];
 
 $query = json_decode($_POST['query']);
@@ -46,4 +48,9 @@ function change_password($data)
   $response = $users->change_password($user_name, $password);
   
   var_dump($response);
+}
+
+function get_input_parameters() {
+  $parameters = new Parameters();
+  echo json_encode($parameters->get_input_parameters());
 }
