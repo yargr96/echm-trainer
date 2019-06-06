@@ -1,12 +1,12 @@
 <template>
   <div class="sidebar border-right bg-white">
     <div class="list-group list-group-flush">
-      <a 
-        href="javascript:void(0)" 
+      <router-link 
         class="list-group-item sidebar-list__item"
-        v-for="(item, index) in list"
+        v-for="(item, key, index) in list"
         :key="index"
-      >{{ item }}</a>
+        :to="item.link"
+      >{{ item.text }}</router-link>
     </div>
   </div>
 </template>
@@ -16,8 +16,18 @@ export default {
   data() {
     return {
       list: [
-        'Модуль администрирования учётных записей',
-        'Модуль математического моделирования'
+        {
+          text: 'Модуль авторизации',
+          link: '/auth'
+        },
+        {
+          text: 'Модуль администрирования учётных записей',
+          link: '/users-administration'
+        },
+        {
+          text: 'Модуль математического моделирования',
+          link: '/math-module'
+        },
       ]
     }
   }
@@ -32,6 +42,12 @@ export default {
   bottom: 0;
   width: 300px;
   overflow: auto;
+
+  & .router-link-exact-active {
+    background-color: #343a40;
+    color: #ffffff !important;
+    border-right: 5px solid #00a8ff;
+  }
 }
 
 .sidebar-list__item {

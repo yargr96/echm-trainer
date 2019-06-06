@@ -31,6 +31,9 @@ export default {
 .header {
   height: 80px;
   z-index: 10;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 </style>

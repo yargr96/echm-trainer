@@ -4,8 +4,7 @@
     <div class="container-fluid page">
       <div class="row">
         <div class="col-12">
-          <!-- <app-admin-interface></app-admin-interface> -->
-          <app-math-module></app-math-module>
+          <router-view></router-view>
         </div>
       </div>
     </div>
