@@ -28,6 +28,10 @@ export default {
           text: 'Модуль математического моделирования',
           link: '/math-module'
         },
+        {
+          text: 'math-proto',
+          link: '/math-proto'
+        },
       ]
     }
   }
