@@ -1,0 +1,10 @@
+{
+    "mathParameters": {
+        "eps": "10",
+        "dt": "60"
+    },
+    "variableParameters": {
+        "U0": "9",
+        "Vn": "60"
+    }
+}

@@ -4,20 +4,22 @@
       <thead>
         <th>i</th>
         <th>t</th>
-        <th>Z</th>
+        <th>s</th>
         <th>j</th>
-        <th>I</th>
+        <th>Z</th>
         <th>G</th>
+        <th>I</th>
         <th>x</th>
       </thead>
       <tbody>
         <tr v-for="(item, index) in outputs" :key="index">
           <td>{{ item.i }}</td>
           <td>{{ item.t }}</td>
-          <td>{{ item.Z }}</td>
+          <td>{{ item.s }}</td>
           <td>{{ item.j }}</td>
-          <td>{{ item.I }}</td>
+          <td>{{ item.Z }}</td>
           <td>{{ item.G }}</td>
+          <td>{{ item.I }}</td>
           <td>{{ item.x }}</td>
         </tr>
       </tbody>
