@@ -2,7 +2,8 @@
   <div id="app">
     <app-header></app-header>
     <!-- <app-login></app-login> -->
-    <app-workspace></app-workspace>
+    <app-workspace v-if="loggedIn"></app-workspace>
+    <app-login v-else></app-login>
   </div>
 </template>
 
@@ -10,17 +11,26 @@
 import AppHeader from './components/Header'
 import AppLogin from './components/Login'
 import AppWorkspace from './components/Workspace'
+import Login from './components/Login'
 
 export default {
   components: {
     AppHeader,
     AppLogin,
     AppWorkspace,
+    AppLogin
   },
   name: 'app',
   data () {
     return {
       
+    }
+  },
+  computed: {
+    loggedIn() {
+      if (!this.$store.state.role)
+        return false;
+      return true;
     }
   }
 }

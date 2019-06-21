@@ -77,7 +77,7 @@
       <button 
         class="btn btn-success btn-block"
         :disabled="!parametersChecked"
-      >Рассчёт</button>
+      >Расчёт</button>
     </form>
 
     <div class="alert alert-primary my-3" v-if="calculated">
@@ -162,7 +162,9 @@ export default {
   },
   methods: {
     calculate() {
-      this.calculated = true;
+      setTimeout(() => {
+        this.calculated = true;
+      }, 400)
     }
   }
 }

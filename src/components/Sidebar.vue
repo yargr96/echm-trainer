@@ -15,20 +15,44 @@
 export default {
   data() {
     return {
-      list: [
+      adminList: [
         {
-          text: 'Модуль авторизации',
-          link: '/auth'
+          text: 'Модуль администрирования базы данных',
+          link: '/db-admin'
         },
         {
           text: 'Модуль администрирования учётных записей',
           link: '/users-administration'
         },
         {
+          text: 'Инструкции',
+          link: '/training'
+        },
+        {
+          text: 'Модуль математического моделирования',
+          link: '/math-module'
+        },
+      ],
+      userList: [
+        {
+          text: 'Инструкции',
+          link: '/training'
+        },
+        {
           text: 'Модуль математического моделирования',
           link: '/math-module'
         },
       ]
+    }
+  },
+  computed: {
+    list() {
+      let role = this.$store.state.role;
+      if (role === 'admin')
+        return this.adminList;
+      else if (role === 'user')
+        return this.userList;
+      else return [];
     }
   }
 };

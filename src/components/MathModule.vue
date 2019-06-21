@@ -13,7 +13,7 @@
         <a
           @click.prevent="activeTab = 'results'"
           class="nav-link"
-          :class="{ active: activeTab == 'results'}"
+          :class="{ active: activeTab == 'results', disabled: !calculated }"
           href="#"
         >Выходные данные</a>
       </li>
@@ -22,7 +22,7 @@
           class="nav-link" 
           href="#"
           @click.prevent="activeTab = 'chart'"
-          :class="{ active: activeTab == 'chart'}"
+          :class="{ active: activeTab == 'chart', disabled: !calculated }"
         >График</a>
       </li>
       <li class="nav-item">
@@ -30,7 +30,7 @@
           class="nav-link" 
           href="#"
           @click.prevent="activeTab = 'optimisation'"
-          :class="{ active: activeTab == 'optimisation'}"
+          :class="{ active: activeTab == 'optimisation', disabled: !calculated }"
         >Оптимизация</a>
       </li>
     </ul>
@@ -177,14 +177,20 @@
         </tbody>
       </table>
       <div>
-        <button class="btn btn-success btn-block">Показать на графике</button>
-        <button class="btn btn-success btn-block">Оптимизировать</button>
+        <button 
+          class="btn btn-success btn-block"
+          @click="activeTab = 'chart'"
+        >Показать на графике</button>
+        <button 
+          class="btn btn-success btn-block"
+          @click="activeTab = 'optimisation'"
+        >Оптимизировать</button>
       </div>
     </div>
 
     <!-- График -->
     <div class="chart" v-if="activeTab == 'chart'">
-      График
+      <app-charts :results="results"></app-charts>
     </div>
 
     <!-- Оптимизация -->
@@ -196,10 +202,12 @@
 <script>
 import axios from "axios";
 import AppOptimisation from "./Oprimisation";
+import AppCharts from "./Charts";
 
 export default {
   components: {
-    AppOptimisation
+    AppOptimisation,
+    AppCharts
   },
   
   data() {
@@ -329,7 +337,8 @@ export default {
       currentMaterial: "",
       results: [],
       inputParameters: {},
-      standardParameters: {}
+      standardParameters: {},
+      calculated: false
     };
   },
 
@@ -454,7 +463,10 @@ export default {
     },
 
     calculate() {
-      this.loadResults();
+      setTimeout(() => {
+        this.loadResults();
+        this.calculated = true;
+      }, 400)
     },
 
     loadResults() {
